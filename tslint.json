@@ -1,0 +1,32 @@
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "no-console": [true, "warning"],
+    "object-literal-sort-keys": false, 
+    "grouped-imports": false,
+    "ordered-imports": false,
+    "jsx-no-lambda": false,
+    "member-access": ["no-public"],
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-constructor",
+          "private-constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+          
+          
+        ]
+      }
+    ]
+  },
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js"
+    ]
+  }
+}
