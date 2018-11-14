@@ -1,4 +1,4 @@
-import { IActionSignature, ACTION_TYPES, LANGUAGES } from '../utils';
+import { IActionSignature, ACTION_TYPES } from '../utils';
 import { ADDER_SEARCHER_TYPES } from 'src/components/AddSearchBox/utils';
 import { ITesterInfo } from 'src/common/interfaces';
 

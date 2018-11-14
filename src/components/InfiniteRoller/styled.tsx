@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IRollerChildProps } from '../Roller/utils';
+import { IRollerChildProps } from '../Roller/interfaces';
 import { COLORS, SPACING } from 'src/common/constants-css';
 
 const IAdderBox = styled.div<IRollerChildProps>``;
