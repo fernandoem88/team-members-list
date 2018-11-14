@@ -1,5 +1,5 @@
 import { ACTION_TYPES, IActionSignature } from '../utils';
-import { ADDER_SEARCHER_TYPES } from 'src/components/AddSearchBox/utils';
+import { ADDER_SEARCHER_TYPES } from 'src/components/AddSearchBox/interfaces';
 import { ITesterInfo } from 'src/common/interfaces';
 
 export type ISetAdderOrSearcherType = (

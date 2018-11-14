@@ -6,11 +6,13 @@ import {
     addTesterToTheTeam,
     setAdderOrSearcherType
 } from 'src/redux-store/actions';
-import { ADDER_SEARCHER_TYPES } from '../AddSearchBox/utils';
+import { ADDER_SEARCHER_TYPES } from '../AddSearchBox/interfaces';
 import { IStoreSignature } from 'src/redux-store/utils';
 import { ITesterSearchProps, IState } from './interfaces';
 
 class TesterSearch extends React.Component<ITesterSearchProps, IState> {
+    // tslint:disable-next-line
+    private _isMmounted: boolean = false;
     constructor(props: any) {
         super(props);
         this.state = {
@@ -20,6 +22,14 @@ class TesterSearch extends React.Component<ITesterSearchProps, IState> {
             popOver: false
         };
     }
+    componentWillMount = () => {
+        this._isMmounted = true;
+    };
+
+    componentWillUnmount = () => {
+        this._isMmounted = false;
+    };
+
     componentWillUpdate = (
         { onErrorStateChange }: any,
         { userNotFounderrorMessage }: IState
@@ -133,24 +143,28 @@ class TesterSearch extends React.Component<ITesterSearchProps, IState> {
 
     private search = async () => {
         try {
-            // console.log('search');
+            console.log('search');
             const user = await dbFindUser(this.state.username);
-            this.setState(
-                {
-                    popOver: false,
-                    loading: false,
-                    username: ''
-                },
-                () => {
-                    this.props.addTesterToTheTeam(user);
-                }
-            );
+            if (this._isMmounted) {
+                this.setState(
+                    {
+                        popOver: false,
+                        loading: false,
+                        username: ''
+                    },
+                    () => {
+                        this.props.addTesterToTheTeam(user);
+                    }
+                );
+            }
         } catch (error) {
             console.error(error);
-            this.setState({
-                loading: false,
-                userNotFounderrorMessage: error.message
-            });
+            if (this._isMmounted) {
+                this.setState({
+                    loading: false,
+                    userNotFounderrorMessage: error.message
+                });
+            }
         }
     };
 }

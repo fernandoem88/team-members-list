@@ -3,7 +3,7 @@ import { ItemBox } from '../common-styled';
 import { AddIcon, AddText } from './styled';
 import { connect } from 'react-redux';
 import { setAdderOrSearcherType } from 'src/redux-store/actions';
-import { ADDER_SEARCHER_TYPES } from '../AddSearchBox/utils';
+import { ADDER_SEARCHER_TYPES } from '../AddSearchBox/interfaces';
 
 export interface IAddTester {
     setAdderOrSearcherType?: (payload: ADDER_SEARCHER_TYPES) => any;

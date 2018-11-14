@@ -8,7 +8,7 @@ import {
     ADDER_SEARCHER_TYPES,
     IAddSearchProps,
     IAddSearchState
-} from './utils';
+} from './interfaces';
 import { setAdderOrSearcherType } from 'src/redux-store/actions';
 
 class AddSearchBox extends React.Component<IAddSearchProps, IAddSearchState> {

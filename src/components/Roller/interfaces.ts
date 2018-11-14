@@ -1,8 +1,7 @@
 import { ReactElement } from 'react';
+import { ReactStandarProps } from 'src/common/interfaces';
 
-export type IRollerChild = ReactElement<
-    React.ClassAttributes<any> & React.HTMLAttributes<any> & IRollerChildProps
->;
+export type IRollerChild = ReactElement<ReactStandarProps & IRollerChildProps>;
 
 export interface IRollerProps {
     nextChildIndex?: number | null;

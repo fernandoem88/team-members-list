@@ -1,4 +1,4 @@
-import { ADDER_SEARCHER_TYPES } from 'src/components/AddSearchBox/utils';
+import { ADDER_SEARCHER_TYPES } from 'src/components/AddSearchBox/interfaces';
 import { ITesterInfo } from 'src/common/interfaces';
 
 // enums
