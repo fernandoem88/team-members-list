@@ -2,19 +2,6 @@ import { IActionSignature, ACTION_TYPES, LANGUAGES } from '../utils';
 import { ADDER_SEARCHER_TYPES } from 'src/components/AddSearchBox/utils';
 import { ITesterInfo } from 'src/common/interfaces';
 
-export const languages = (state: string[] = Array.from(new Set(LANGUAGES))) =>
-    state;
-
-export const currentLang = (
-    state: string | null = LANGUAGES.length ? LANGUAGES[0] : null,
-    action: IActionSignature
-) => {
-    switch (action.type) {
-        default:
-            return state;
-    }
-};
-
 /**
  * @description
  */

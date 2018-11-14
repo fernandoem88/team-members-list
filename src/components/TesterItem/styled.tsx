@@ -67,9 +67,10 @@ export const TesterCloseIcon = styled(ItemIcon)`
     }
 `;
 
-export const TesterImage = ItemIcon.withComponent(styled.img`
+const ImgStyle = styled.img`
     font-size: 1rem;
-`);
+`;
+export const TesterImage = ItemIcon.withComponent(ImgStyle);
 
 export const UserRoleAndName = styled.span`
     position: relative;

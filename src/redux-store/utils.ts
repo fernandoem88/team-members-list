@@ -22,7 +22,3 @@ export interface IStoreSignature {
     testersList?: ITesterInfo[];
     testersListIsExpanded?: boolean;
 }
-
-// constants
-
-export const LANGUAGES = ['en'];

@@ -1,3 +1,6 @@
+/**
+ * standard values in px
+ */
 export const DEVICE_WIDTH_TYPES = {
     XS: { max: 575, name: 'xs' },
     SM: { min: 575, max: 767, name: 'sm' },
@@ -17,7 +20,7 @@ export const COLORS = {
     $cc_white: '#ffffff'
 };
 /**
- * Values are in rem => 0.16rem = 16px
+ * Values are in rem => 1rem = 10px
  */
 export const SPACING = {
     $sp_standare: 2.5, // bootstrap

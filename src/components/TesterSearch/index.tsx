@@ -4,28 +4,13 @@ import { SearchContainer, InputContainer, Input, ErrorBox } from './styled';
 import { DATABASE, dbFindUser } from 'src/common/utils';
 import {
     addTesterToTheTeam,
-    setAdderOrSearcherType,
-    IAddTesterToTheTeam,
-    ISetAdderOrSearcherType
+    setAdderOrSearcherType
 } from 'src/redux-store/actions';
 import { ADDER_SEARCHER_TYPES } from '../AddSearchBox/utils';
 import { IStoreSignature } from 'src/redux-store/utils';
+import { ITesterSearchProps, IState } from './interfaces';
 
-interface IActions {
-    addTesterToTheTeam: IAddTesterToTheTeam;
-    setAdderOrSearcherType: ISetAdderOrSearcherType;
-}
-interface IState {
-    username: string;
-    loading: boolean;
-    userNotFounderrorMessage: string | null;
-    popOver: boolean;
-}
-class TesterSearch extends React.Component<
-    IStoreSignature &
-        IActions & { onErrorStateChange?: (error: string) => void },
-    IState
-> {
+class TesterSearch extends React.Component<ITesterSearchProps, IState> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -148,7 +133,7 @@ class TesterSearch extends React.Component<
 
     private search = async () => {
         try {
-            console.log('search');
+            // console.log('search');
             const user = await dbFindUser(this.state.username);
             this.setState(
                 {

@@ -4,13 +4,14 @@ import Roller from '../Roller';
 import AddTester from '../AddTester';
 import TesterSearch from '../TesterSearch';
 import { IStoreSignature } from 'src/redux-store/utils';
-import { ADDER_SEARCHER_TYPES, IAddSearchProps } from './utils';
+import {
+    ADDER_SEARCHER_TYPES,
+    IAddSearchProps,
+    IAddSearchState
+} from './utils';
 import { setAdderOrSearcherType } from 'src/redux-store/actions';
 
-class AddSearchBox extends React.Component<
-    IAddSearchProps,
-    { currentChildIndex: number; status: ADDER_SEARCHER_TYPES; zIndex: number }
-> {
+class AddSearchBox extends React.Component<IAddSearchProps, IAddSearchState> {
     private rollerChildNames = [
         ADDER_SEARCHER_TYPES.ADD,
         ADDER_SEARCHER_TYPES.SEARCH
@@ -83,13 +84,11 @@ class AddSearchBox extends React.Component<
     private setZIndex = (error: any) => {
         if (error) {
             if (this.state.zIndex === 1) {
-                // to be on top on the "remove user" tooltip
+                // to be on top on the "remove user" tooltip, I need to set the z-index > than 3
                 this.setState({ zIndex: 4 });
             }
-        } else {
-            if (this.state.zIndex !== 1) {
-                this.setState({ zIndex: 1 });
-            }
+        } else if (this.state.zIndex !== 1) {
+            this.setState({ zIndex: 1 });
         }
     };
 

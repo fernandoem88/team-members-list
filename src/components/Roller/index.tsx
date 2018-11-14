@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RollerChild, RollerContainer } from './styled';
-import { IRollerProps, IRollerState } from './utils';
+import { IRollerProps, IRollerState } from './interfaces';
 import { TimelineMax, Timeline } from 'gsap'; // TweenConfig
 
 export default class Roller extends React.Component<

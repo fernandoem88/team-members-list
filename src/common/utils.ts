@@ -88,13 +88,15 @@ export const dbFindUser = (username: string) => {
     );
 };
 
+/**
+ *
+ * @param str string to convert to a dash-case.
+ */
 export const toDashCase = (str: string) => {
-    return str.replace(/([A-Z])/g, $1 => {
-        return '-' + $1.toLowerCase();
-    });
+    return str.replace(/([A-Z])/g, $1 => '-' + $1.toLowerCase());
 };
 
-export const reactCssObjectToStandardCssString = (reactCss?: any) => {
+export const reactCssObjectToStandardCssString = (reactCss?: {}) => {
     if (!reactCss) {
         return '';
     }
@@ -105,11 +107,8 @@ export const reactCssObjectToStandardCssString = (reactCss?: any) => {
 
 export const generateRandomColor = (): string => {
     const eeeeeeNumber = parseInt('eeeeee', 16);
-
     const colorNumber = Math.floor(Math.random() * eeeeeeNumber); // index * colorBlockNumber;
     const color = colorNumber.toString(16);
-
-    const zeros =
-        color.length < 6 ? new Array(6 - color.length).fill('0').join('') : '';
+    const zeros = new Array(6 - color.length).fill('0').join('');
     return '#' + color + zeros;
 };

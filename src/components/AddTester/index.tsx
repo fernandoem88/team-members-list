@@ -5,9 +5,11 @@ import { connect } from 'react-redux';
 import { setAdderOrSearcherType } from 'src/redux-store/actions';
 import { ADDER_SEARCHER_TYPES } from '../AddSearchBox/utils';
 
-export class AddTester extends React.Component<{
-    setAdderOrSearcherType: (payload: ADDER_SEARCHER_TYPES) => any;
-}> {
+export interface IAddTester {
+    setAdderOrSearcherType?: (payload: ADDER_SEARCHER_TYPES) => any;
+}
+
+class AddTester extends React.Component<IAddTester> {
     render() {
         return (
             <ItemBox>
@@ -17,8 +19,11 @@ export class AddTester extends React.Component<{
         );
     }
     private showSearchBox = () => {
-        console.log('showSearchBox');
-        this.props.setAdderOrSearcherType(ADDER_SEARCHER_TYPES.SEARCH);
+        // console.log('showSearchBox');
+        const { setAdderOrSearcherType: cb } = this.props;
+        if (cb) {
+            cb(ADDER_SEARCHER_TYPES.SEARCH);
+        }
     };
 }
 

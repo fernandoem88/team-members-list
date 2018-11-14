@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { reactCssObjectToStandardCssString } from 'src/common/utils';
-import { IRollerChildProps } from './utils';
-import { COLORS } from 'src/common/constants-css';
+import { IRollerChildProps } from './interfaces';
 
 const IRollerContainer = styled.div<{ containerStyle?: React.CSSProperties }>``;
 export const RollerContainer = styled(IRollerContainer)`
@@ -9,7 +8,6 @@ export const RollerContainer = styled(IRollerContainer)`
     text-align: center;
     &.rolling {
         overflow: hidden;
-        /* border-right: solid 1px ${COLORS.$cc_grey_light}; */
     }
     ${props => reactCssObjectToStandardCssString(props.containerStyle)};
 `;
