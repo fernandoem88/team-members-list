@@ -1,3 +1,4 @@
+import { Observable, from } from 'rxjs';
 import { ITesterInfo } from './interfaces';
 
 export const DATABASE: ITesterInfo[] = [
@@ -63,11 +64,30 @@ export const DATABASE: ITesterInfo[] = [
     }
 ];
 /**
- * @description Returns a promise that resolves  a ITesterInfo type or rejects an Error with 404_not_found name
+ * @description Returns a subscription that resolves a ITesterInfo type or rejects an Error with 404_not_found name
  * @param username the username of the user to find
  */
-export const dbFindUser = (username: string) => {
-    return new Promise<ITesterInfo>(
+export const dbFindUser = (username: string): Observable<ITesterInfo> => {
+    // the caller must subscribe passing an observer: subscription.subscribe(observer)
+    // return Observable.create((observer: Observer<ITesterInfo>) => {
+    //     setTimeout(() => {
+    //         const tester = DATABASE.find(
+    //             d =>
+    //                 d.username.toLowerCase() ===
+    //                 username.toLocaleLowerCase().trim()
+    //         );
+    //         if (tester) {
+    //             observer.next(tester);
+    //             observer.complete();
+    //         } else {
+    //             const error = new Error();
+    //             error.message = `Team member  with name ${username} not found`;
+    //             error.name = '404_not_found';
+    //             observer.error(error);
+    //         }
+    //     }, 1000);
+    // });
+    const prom = new Promise<ITesterInfo>(
         (resolve: (t: ITesterInfo) => void, reject: (err: Error) => void) => {
             setTimeout(() => {
                 const tester = DATABASE.find(
@@ -86,6 +106,7 @@ export const dbFindUser = (username: string) => {
             }, 1000);
         }
     );
+    return from(prom);
 };
 
 /**

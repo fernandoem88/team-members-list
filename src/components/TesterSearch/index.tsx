@@ -6,10 +6,11 @@ import { ADDER_SEARCHER_TYPES } from 'Components/AddSearchBox/interfaces';
 import { IStoreSignature } from 'ReduxStore/interfaces';
 import { ITesterSearchProps, IState } from './interfaces';
 import { SearchContainer, InputContainer, Input, ErrorBox } from './styled';
+import { Observer, Subscription } from 'rxjs';
+import { ITesterInfo } from 'Common/interfaces';
 
 class TesterSearch extends React.Component<ITesterSearchProps, IState> {
-    // tslint:disable-next-line
-    private _isMmounted: boolean = false;
+    private subscriptions: Subscription[] = [];
     constructor(props: any) {
         super(props);
         this.state = {
@@ -19,12 +20,9 @@ class TesterSearch extends React.Component<ITesterSearchProps, IState> {
             popOver: false
         };
     }
-    componentWillMount = () => {
-        this._isMmounted = true;
-    };
 
     componentWillUnmount = () => {
-        this._isMmounted = false;
+        this.unsubscribe();
     };
 
     componentWillUpdate = (
@@ -138,11 +136,17 @@ class TesterSearch extends React.Component<ITesterSearchProps, IState> {
         }
     };
 
+    private removeClosedSubscriptions = () => {
+        this.subscriptions = this.subscriptions.filter(s => !s.closed);
+    };
+    private unsubscribe = () => {
+        this.subscriptions.forEach(subscr => subscr.unsubscribe());
+    };
+
     private search = async () => {
-        try {
-            console.log('search');
-            const user = await dbFindUser(this.state.username);
-            if (this._isMmounted) {
+        console.log('search');
+        const observer: Observer<ITesterInfo> = {
+            next: (user: ITesterInfo) => {
                 this.setState(
                     {
                         popOver: false,
@@ -153,16 +157,20 @@ class TesterSearch extends React.Component<ITesterSearchProps, IState> {
                         this.props.addTesterToTheTeam(user);
                     }
                 );
-            }
-        } catch (error) {
-            console.error(error);
-            if (this._isMmounted) {
+            },
+            error: (error: Error) => {
+                console.error(error);
                 this.setState({
                     loading: false,
                     userNotFounderrorMessage: error.message
                 });
-            }
-        }
+            },
+            complete: this.removeClosedSubscriptions
+        };
+        const subscription = dbFindUser(this.state.username).subscribe(
+            observer
+        );
+        this.subscriptions.push(subscription);
     };
 }
 
