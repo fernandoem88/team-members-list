@@ -17,7 +17,12 @@
     "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true, "paths": {
+      "Common/*": ["src/common/*"],
+      "Components/*": ["src/components/*"],
+      "HOC/*": ["src/components-hoc/*"],
+      "ReduxStore/*": ["src/redux-store/*"]
+    }
   },
   "exclude": [
     "node_modules",

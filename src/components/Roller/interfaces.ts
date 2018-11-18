@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { ReactStandarProps } from 'src/common/interfaces';
+import { ReactStandarProps } from 'Common/interfaces';
 
 export type IRollerChild = ReactElement<ReactStandarProps & IRollerChildProps>;
 

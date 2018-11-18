@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import Roller from '../Roller';
-import AddTester from '../AddTester';
-import TesterSearch from '../TesterSearch';
-import { IStoreSignature } from 'src/redux-store/utils';
+import Roller from 'Components/Roller';
+import AddTester from 'Components/AddTester';
+import TesterSearch from 'Components/TesterSearch';
+import { IStoreSignature } from 'ReduxStore/interfaces';
 import {
     ADDER_SEARCHER_TYPES,
     IAddSearchProps,
@@ -25,10 +25,10 @@ class AddSearchBox extends React.Component<IAddSearchProps, IAddSearchState> {
         };
     }
     componentWillMount = () => {
-        const { adderSearcherType, setAdderOrSearcherType: cb } = this.props;
+        const { adderSearcherType, setAdderOrSearcherType: fn } = this.props;
 
-        if (adderSearcherType !== ADDER_SEARCHER_TYPES.ADD && cb) {
-            cb(ADDER_SEARCHER_TYPES.ADD);
+        if (adderSearcherType !== ADDER_SEARCHER_TYPES.ADD && fn) {
+            fn(ADDER_SEARCHER_TYPES.ADD);
         }
     };
 

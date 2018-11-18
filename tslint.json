@@ -16,8 +16,6 @@
           "public-instance-method",
           "protected-instance-method",
           "private-instance-method"
-          
-          
         ]
       }
     ]

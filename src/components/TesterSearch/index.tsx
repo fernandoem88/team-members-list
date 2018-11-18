@@ -1,14 +1,11 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { SearchContainer, InputContainer, Input, ErrorBox } from './styled';
-import { DATABASE, dbFindUser } from 'src/common/utils';
-import {
-    addTesterToTheTeam,
-    setAdderOrSearcherType
-} from 'src/redux-store/actions';
-import { ADDER_SEARCHER_TYPES } from '../AddSearchBox/interfaces';
-import { IStoreSignature } from 'src/redux-store/utils';
+import { DATABASE, dbFindUser } from 'Common/utils';
+import { addTesterToTheTeam, setAdderOrSearcherType } from 'ReduxStore/actions';
+import { ADDER_SEARCHER_TYPES } from 'Components/AddSearchBox/interfaces';
+import { IStoreSignature } from 'ReduxStore/interfaces';
 import { ITesterSearchProps, IState } from './interfaces';
+import { SearchContainer, InputContainer, Input, ErrorBox } from './styled';
 
 class TesterSearch extends React.Component<ITesterSearchProps, IState> {
     // tslint:disable-next-line

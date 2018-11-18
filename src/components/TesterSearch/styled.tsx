@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { ItemBox } from '../common-styled';
-import { COLORS, SPACING } from 'src/common/constants-css';
+import { COLORS, SPACING } from 'Common/constants-css';
+import { ItemBox } from 'Components/common-styled';
 
 export const SearchContainer = styled(ItemBox)`
     display: block;

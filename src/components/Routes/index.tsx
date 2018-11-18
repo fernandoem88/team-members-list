@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Redirect, Route, RouteProps, Switch } from 'react-router-dom';
-import InfiniteRoller from '../InfiniteRoller';
-import TeamBox from '../TeamBox';
+import InfiniteRoller from 'Components/InfiniteRoller';
+import TeamBox from 'Components/TeamBox';
 
 export interface IAppRouteOptions {
     component: React.ComponentClass | React.StatelessComponent;

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-
-import { SPACING, DEVICE_WIDTH_TYPES } from 'src/common/constants-css';
+import { SPACING, DEVICE_WIDTH_TYPES } from 'Common/constants-css';
 
 export const ContentBox = styled.div`
     /* mobile -> one column */

@@ -1,8 +1,8 @@
 import {
     IAddTesterToTheTeam,
     ISetAdderOrSearcherType
-} from 'src/redux-store/actions';
-import { IStoreSignature } from 'src/redux-store/utils';
+} from 'ReduxStore/actions';
+import { IStoreSignature } from 'ReduxStore/interfaces';
 
 export interface IActions {
     addTesterToTheTeam: IAddTesterToTheTeam;

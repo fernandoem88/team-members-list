@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { removeTesterFromTheTeam } from 'ReduxStore/actions';
 import { TesterCloseIcon, TesterImage, UserRoleAndName, Card } from './styled';
 import { ITesterItemProps } from './interfaces';
-import { removeTesterFromTheTeam } from 'src/redux-store/actions';
 
 export const exitingDuration = 200;
 class TesterItem extends React.Component<

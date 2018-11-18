@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
-import { COLORS } from 'src/common/constants-css';
-import { ItemIcon, ItemBox } from '../common-styled';
+import { COLORS } from 'Common/constants-css';
+import { ItemIcon, ItemBox } from 'Components/common-styled';
 
 const enterKeyframe = keyframes`
     0% { transform: translateY(-1rem); opacity: 0}

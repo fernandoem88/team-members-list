@@ -1,5 +1,11 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { withRouter, RouteComponentProps } from 'react-router';
+import { MAX_TO_SHOW } from 'Components/TeamBox';
+import { routesPathes } from 'Components/Routes';
+import { COLORS } from 'Common/constants-css';
+import { IStoreSignature } from 'ReduxStore/interfaces';
+import { expandTestersList, IExpandTesterList } from 'ReduxStore/actions';
 import {
     BorderTopContainer,
     Main,
@@ -8,12 +14,6 @@ import {
     ShowAll,
     TeamIcon
 } from './styled';
-import { COLORS } from 'src/common/constants-css';
-import { IStoreSignature } from 'src/redux-store/utils';
-import { expandTestersList, IExpandTesterList } from 'src/redux-store/actions';
-import { MAX_TO_SHOW } from 'src/components/TeamBox';
-import { withRouter, RouteComponentProps } from 'react-router';
-import { routesPathes } from 'src/components/Routes';
 
 class MainLayout extends React.Component<
     IStoreSignature & {

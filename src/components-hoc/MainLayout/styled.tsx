@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { SPACING, DEVICE_WIDTH_TYPES, COLORS } from 'src/common/constants-css';
-import { BoxWithColoredBorderTop } from 'src/components/common-styled';
+import { SPACING, DEVICE_WIDTH_TYPES, COLORS } from 'Common/constants-css';
+import { BoxWithColoredBorderTop } from 'Components/common-styled';
 
 export const Main = styled.div`
     /* mobile style under MD */

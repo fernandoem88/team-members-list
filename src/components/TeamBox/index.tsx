@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import TesterItem from 'Components/TesterItem';
+import AddSearchBox from 'Components/AddSearchBox';
+import { IStoreSignature } from 'ReduxStore/interfaces';
+import { ITesterInfo, ReactStandarProps } from 'Common/interfaces';
 import { ContentBox } from './styled';
-import TesterItem from '../TesterItem';
-import AddSearchBox from '../AddSearchBox';
-import { IStoreSignature } from 'src/redux-store/utils';
-import { ITesterInfo, ReactStandarProps } from 'src/common/interfaces';
 
 export const MAX_TO_SHOW = 3;
 class TeamBox extends React.Component<ReactStandarProps & IStoreSignature> {

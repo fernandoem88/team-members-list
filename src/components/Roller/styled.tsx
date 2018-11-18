@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { reactCssObjectToStandardCssString } from 'src/common/utils';
+import { reactCssObjectToStandardCssString } from 'Common/utils';
 import { IRollerChildProps } from './interfaces';
 
 const IRollerContainer = styled.div<{ containerStyle?: React.CSSProperties }>``;

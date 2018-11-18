@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { COLORS, SPACING, DEVICE_WIDTH_TYPES } from 'src/common/constants-css';
-import { ItemIcon } from '../common-styled';
+import { COLORS, SPACING, DEVICE_WIDTH_TYPES } from 'Common/constants-css';
+import { ItemIcon } from 'Components/common-styled';
 
 export const AddIcon = styled(ItemIcon)`
     color: ${COLORS.$cc_green_middle};

@@ -4,10 +4,10 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import MainLayout from './components-hoc/MainLayout';
-import Routes from './components/Routes';
+import MainLayout from 'HOC/MainLayout';
+import Routes from 'Components/Routes';
+import combinedReducers from 'ReduxStore/combined-reducers';
 import './index.css';
-import combinedReducers from './redux-store/combined-reducers';
 
 const store = createStore(combinedReducers, applyMiddleware(thunk));
 

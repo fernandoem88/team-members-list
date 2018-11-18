@@ -1,8 +1,7 @@
-import { ADDER_SEARCHER_TYPES } from 'src/components/AddSearchBox/interfaces';
-import { ITesterInfo } from 'src/common/interfaces';
+import { ADDER_SEARCHER_TYPES } from 'Components/AddSearchBox/interfaces';
+import { ITesterInfo } from 'Common/interfaces';
 
 // enums
-
 export enum ACTION_TYPES {
     ADD_MORE_TESTERS_TO_THE_TEAM = 'ADD_MORE_TESTERS_TO_THE_TEAM',
     ADD_TESTER_TO_THE_TEAM = 'ADD_TESTER_TO_THE_TEAM',

@@ -1,6 +1,6 @@
-import { ACTION_TYPES, IActionSignature } from '../utils';
-import { ADDER_SEARCHER_TYPES } from 'src/components/AddSearchBox/interfaces';
-import { ITesterInfo } from 'src/common/interfaces';
+import { ACTION_TYPES, IActionSignature } from 'ReduxStore/interfaces';
+import { ADDER_SEARCHER_TYPES } from 'Components/AddSearchBox/interfaces';
+import { ITesterInfo } from 'Common/interfaces';
 
 export type ISetAdderOrSearcherType = (
     payload: ADDER_SEARCHER_TYPES

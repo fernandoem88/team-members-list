@@ -1,5 +1,5 @@
-import { IStoreSignature } from 'src/redux-store/utils';
-import { ISetAdderOrSearcherType } from 'src/redux-store/actions';
+import { IStoreSignature } from 'ReduxStore/interfaces';
+import { ISetAdderOrSearcherType } from 'ReduxStore/actions';
 
 export enum ADDER_SEARCHER_TYPES {
     ADD = 'adder',

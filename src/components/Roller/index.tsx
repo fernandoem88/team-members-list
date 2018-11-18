@@ -1,7 +1,7 @@
+import { TimelineMax, Timeline } from 'gsap'; // TweenConfig
 import * as React from 'react';
 import { RollerChild, RollerContainer } from './styled';
 import { IRollerProps, IRollerState } from './interfaces';
-import { TimelineMax, Timeline } from 'gsap'; // TweenConfig
 
 export default class Roller extends React.Component<
     IRollerProps,
@@ -104,13 +104,16 @@ export default class Roller extends React.Component<
             currentChildIndex,
             nextChildIndex
         } = this.state;
-        return index === previousChildIndex
-            ? 'previous-rolling-item'
-            : index === nextChildIndex
-            ? 'next-rolling-item'
-            : index === currentChildIndex
-            ? 'current-rolling-item'
-            : null;
+        switch (index) {
+            case previousChildIndex:
+                return 'previous-rolling-item';
+            case nextChildIndex:
+                return 'next-rolling-item';
+            case currentChildIndex:
+                return 'current-rolling-item';
+            default:
+                return null;
+        }
     };
 
     /**

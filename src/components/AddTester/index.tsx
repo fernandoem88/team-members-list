@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { ItemBox } from '../common-styled';
-import { AddIcon, AddText } from './styled';
 import { connect } from 'react-redux';
-import { setAdderOrSearcherType } from 'src/redux-store/actions';
-import { ADDER_SEARCHER_TYPES } from '../AddSearchBox/interfaces';
+import { ADDER_SEARCHER_TYPES } from 'Components/AddSearchBox/interfaces';
+import { ItemBox } from 'Components/common-styled';
+import { setAdderOrSearcherType } from 'ReduxStore/actions';
+import { AddIcon, AddText } from './styled';
 
 export interface IAddTester {
     setAdderOrSearcherType?: (payload: ADDER_SEARCHER_TYPES) => any;

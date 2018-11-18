@@ -1,6 +1,6 @@
-import { ITesterInfo, ReactStandarProps } from 'src/common/interfaces';
-import { IStoreSignature } from 'src/redux-store/utils';
-import { IRemoveTesterFromTheTeam } from 'src/redux-store/actions';
+import { ITesterInfo, ReactStandarProps } from 'Common/interfaces';
+import { IStoreSignature } from 'ReduxStore/interfaces';
+import { IRemoveTesterFromTheTeam } from 'ReduxStore/actions';
 
 export type ITesterItemProps = ReactStandarProps &
     IStoreSignature & {

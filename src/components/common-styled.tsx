@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS, SPACING } from 'src/common/constants-css';
+import { COLORS, SPACING } from 'Common/constants-css';
 
 export const BoxWithColoredBorderTop = styled.div<{ color: string }>`
     border: solid 0.1rem ${COLORS.$cc_grey_light};

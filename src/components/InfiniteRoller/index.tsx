@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Roller from '../Roller';
-import { AdderBox, CenterInParent } from './styled';
-import { DATABASE, generateRandomColor } from 'src/common/utils';
-import { ITesterInfo } from 'src/common/interfaces';
 import { connect } from 'react-redux';
-import { IStoreSignature } from 'src/redux-store/utils';
+import Roller from 'Components/Roller';
+import { ITesterInfo } from 'Common/interfaces';
+import { DATABASE, generateRandomColor } from 'Common/utils';
+import { IStoreSignature } from 'ReduxStore/interfaces';
+import { AdderBox, CenterInParent } from './styled';
 
 export class InfiniteRoller extends React.Component<
     { testersList: ITesterInfo[] },

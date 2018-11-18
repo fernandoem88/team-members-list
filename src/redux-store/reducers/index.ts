@@ -1,6 +1,6 @@
-import { IActionSignature, ACTION_TYPES } from '../utils';
-import { ADDER_SEARCHER_TYPES } from 'src/components/AddSearchBox/interfaces';
-import { ITesterInfo } from 'src/common/interfaces';
+import { ADDER_SEARCHER_TYPES } from 'Components/AddSearchBox/interfaces';
+import { ITesterInfo } from 'Common/interfaces';
+import { IActionSignature, ACTION_TYPES } from 'ReduxStore/interfaces';
 
 /**
  * @description
